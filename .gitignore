@@ -1,0 +1,6 @@
+# Byte-compiled / optimizes / DLL files
+_pychache_
+*.py[cod]
+*$py.class
+
+*.sqlite3

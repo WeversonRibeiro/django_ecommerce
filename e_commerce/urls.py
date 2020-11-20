@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+# O ponto de .views, é porque está na mesma pasta que o arquivo urls.py (imports de arquivos da mesma pasta)
+from .views import home_page
 
 urlpatterns = [
+    path ('', home_page),
     path('admin/', admin.site.urls),
 ]
