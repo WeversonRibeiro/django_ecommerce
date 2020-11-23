@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth import get_user_model
 
-
+User = get_user_model()
 class ContactForm(forms.Form):
     nome_completo = forms.CharField(
     error_messages={'required': 'Obrigatório o preenchimento do nome'},
@@ -37,11 +37,11 @@ class ContactForm(forms.Form):
             raise forms.ValidationError("O Email deve ser do gmail.com")
         return email
 
-    class LoginForm(forms.Form):
+class LoginForm(forms.Form):
         username = forms.CharField()
         password = forms.CharField(widget=forms.PasswordInput)
 
-    class RegisterForm(forms.Form):
+class RegisterForm(forms.Form):
         username = forms.CharField()
         email = forms.EmailField()
         password = forms.CharField(widget=forms.PasswordInput)
